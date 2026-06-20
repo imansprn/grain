@@ -1,8 +1,56 @@
-# Product UI Architect
+# Grain
 
-Prevents generic AI-generated interfaces. Three paths: Greenfield (new design), Audit (analyze existing), Remediate (fix existing).
+<p align="center">
+  <em>Expert product designer, UX designer, UI designer, art director, and design critic.</em>
+</p>
 
-**Single source of truth:** [`SKILL.md`](SKILL.md) — all process, rules, and output formats live there.
+<br />
+
+A portable **Agent Skill** that raises design quality. Grain is not a code generator. Its purpose is to improve quality — through structured critique, identity-first design, and demanding review.
+
+Three modes: **Greenfield** (new design), **Audit** (analyze existing), **Remediate** (fix existing). Every output is implementation-ready.
+
+## Installing
+
+```bash
+npx skills add https://github.com/imansprn/grain
+```
+
+Install by skill name:
+
+```bash
+npx skills add https://github.com/imansprn/grain --skill "grain"
+```
+
+You can also copy [`SKILL.md`](SKILL.md) directly into your project or paste it into a Claude Code or Cursor conversation.
+
+## Skill
+
+| Skill (folder) | Install name | Description |
+| --- | --- | --- |
+| **grain** | `grain` | Expert product designer and design critic. Greenfield design, audit, and remediation. Identity-first process, anti-slop enforcement, structured critique output. |
+
+## Principles
+
+- Reject AI slop.
+- Prefer clarity over decoration.
+- Prefer hierarchy over complexity.
+- Prefer consistency over novelty.
+- Prefer usability over aesthetics.
+- Prefer restraint over excess.
+- Every element must justify its existence.
+
+## Review Output Format
+
+Every design review produces:
+
+- **Strengths**
+- **Weaknesses**
+- **Design Critique**
+- **UX Critique**
+- **Simplification Opportunities**
+- **Recommended Changes**
+- **Final Verdict**
 
 ## Quick Start
 
@@ -11,22 +59,19 @@ Prevents generic AI-generated interfaces. Three paths: Greenfield (new design), 
 | Design a new screen from scratch | `SKILL.md` → Greenfield Process |
 | Review an existing project for issues | `SKILL.md` → Audit Process |
 | Fix problems in an existing project | `SKILL.md` → Remediate Process |
-| Check for AI slop patterns | `python3 lint/lint.py <path>` |
 | Design a single component | `component_scope.md` |
 
-## Linter
+## Common Questions
 
-```sh
-python3 lint/lint.py /path/to/project             # human-readable
-python3 lint/lint.py /path/to/project --exit-code # CI mode
-python3 lint/lint.py /path/to/project --format json
-```
+**How is this different from a general design AI?**
+Grain never praises mediocre work and never assumes a design is good because it looks modern. It challenges decisions and acts as a demanding reviewer with a structured output format.
 
-22 deterministic rules. Covers HTML/CSS/JSX/TSX/Kotlin/Swift/Dart/Python.
+**What is SKILL.md?**
+A portable instruction file agents load automatically. Install via `npx skills add` or copy into a repo or conversation.
 
-## Validation
+**Does it work with React, Vue, Svelte, SwiftUI?**
+Yes. Rules target design intent and identity — not a specific framework or platform.
 
-| Project | Lines | Domain | Result |
-|---------|-------|--------|--------|
-| CraftBy.dev (Next.js 15) | ~2000 | Developer portfolio | Identity match. Zero slop. 5 minor findings. |
-| GOST (KMP Compose Desktop) | ~6600 | Premium-dark-SaaS (misapplied) | Identity mismatch. Dead screen. Sidebar bloat. 3 anti-patterns. |
+## License
+
+[MIT License](LICENSE) · Copyright (c) 2026 imansprn
